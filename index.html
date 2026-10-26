@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hybrid Retrieval and Neural Reranking for Portuguese Regulatory Search</title>
+<meta name="description" content="IP&amp;MC 2026 paper: zero-shot evaluation of lexical, dense, hybrid retrieval and neural reranking on Brazilian electricity regulatory resolutions (ANEEL).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2f63;
+    --blue: #0067ac;
+    --pale: #eef4fb;
+    --ink: #1f2328;
+    --muted: #5b6470;
+    --rule: #d5e2f0;
+    --paper: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --navy: #a9c8f0;
+      --blue: #6fb1e8;
+      --pale: #16202c;
+      --ink: #e6e9ee;
+      --muted: #a2abb7;
+      --rule: #2a3a4d;
+      --paper: #0d1117;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.6 "Fira Sans", system-ui, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 56px; }
+  .venue { color: var(--blue); font-weight: 600; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; }
+  h1 { color: var(--navy); font-size: clamp(26px, 5vw, 36px); line-height: 1.2; margin: 8px 0 16px; }
+  .authors { margin: 0; }
+  .affil { color: var(--muted); font-size: 15px; margin: 4px 0 24px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+  .button {
+    display: inline-block; padding: 10px 18px; border-radius: 6px;
+    font-weight: 600; text-decoration: none; border: 2px solid var(--blue);
+  }
+  .button.primary { background: var(--blue); color: #fff; }
+  .button.secondary { color: var(--blue); }
+  h2 { color: var(--navy); font-size: 20px; margin: 32px 0 8px; }
+  .abstract { background: var(--pale); border-radius: 6px; padding: 16px 20px; }
+  pre {
+    background: var(--pale); border-radius: 6px; padding: 16px; overflow-x: auto;
+    font-size: 13px; line-height: 1.5;
+  }
+  .note { color: var(--muted); font-size: 14px; }
+  a { color: var(--blue); }
+  footer { border-top: 1px solid var(--rule); margin-top: 40px; padding-top: 16px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="venue">IP&amp;MC 2026 · Wuhan, China</div>
+  <h1>Hybrid Retrieval and Neural Reranking for Portuguese Regulatory Search: A Zero-Shot Evaluation on ANEEL Resolutions</h1>
+  <p class="authors"><strong>Artur M. A. Novais</strong>, Thiago Pedroso de Jesus, Gustavo L. B. Pereira, Vinícius A. Aguiar</p>
+  <p class="affil">Institute of Informatics, Federal University of Goiás (UFG) · Center of Excellence in Artificial Intelligence (CEIA)</p>
+
+  <div class="actions">
+    <a class="button primary" href="novais2026-ipmc-preprint.pdf">PDF (preprint)</a>
+  </div>
+
+  <h2>Abstract</h2>
+  <div class="abstract">
+    <p>Regulatory institutions increasingly rely on retrieval systems to locate norms, obligations, and procedural rules in large document collections, yet there is little empirical evidence on how modern retrieval pipelines behave on Brazilian Portuguese regulatory text. We evaluate zero-shot retrieval and neural reranking pipelines for Portuguese regulatory search using resolutions from the Brazilian Electricity Regulatory Agency (ANEEL) at two granularities: full documents and contextualized chunks. We compare lexical retrieval (BM25), dense retrieval (Qwen3-Embedding), hybrid sparse-dense retrieval with Reciprocal Rank Fusion, and off-the-shelf multilingual cross-encoder rerankers, in single-stage and multi-stage configurations, over an LLM-generated known-item benchmark with 1,000 synthetic queries. Lexical evidence proves essential: BM25 outperforms dense retrieval at the document level, while hybrid retrieval yields the strongest first-stage candidates at both granularities. Combined with a single BGE reranker, the hybrid pipeline achieves the best MRR@10 (0.794 for documents, 0.566 for chunks) and the best chunk-level Recall@10 (0.790), while hybrid retrieval alone retains the best document-level Recall@10 (0.934 vs. 0.926 after reranking); deeper Qwen-based reranking cascades increase latency without proportional gains. These results indicate that hybrid lexical-dense retrieval followed by lightweight reranking offers a more effective and practical trade-off than deeper neural cascades for Portuguese regulatory search.</p>
+  </div>
+
+  <h2>Cite</h2>
+<pre>@misc{novais2026hybrid,
+  title  = {Hybrid Retrieval and Neural Reranking for Portuguese Regulatory Search:
+            A Zero-Shot Evaluation on {ANEEL} Resolutions},
+  author = {Novais, Artur M. A. and de Jesus, Thiago Pedroso and Pereira, Gustavo L. B.
+            and Aguiar, Vin{\'i}cius A.},
+  note   = {Preprint under review at Information Processing \&amp; Management},
+  year   = {2026}
+}</pre>
+
+  <p class="note">Preprint under review at Information Processing &amp; Management. This version has not been peer reviewed.</p>
+
+  <footer>
+    Funded by P&amp;D CEMIG/ANEEL PD-04950-D0677/2023 with support of CEIA and MCTI/EMBRAPII grant 057/2023, and by INCT TILD-IAR grant 408490/2024-1.<br>
+    Contact: <a href="mailto:gustavobueno@discente.ufg.br">gustavobueno@discente.ufg.br</a>
+  </footer>
+</main>
+</body>
+</html>
